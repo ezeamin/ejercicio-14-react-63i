@@ -1,0 +1,22 @@
+{
+  "blogs": [
+    {
+      "title": "Mondongo al plato con crema y mayonesa",
+      "image-url": "https://www.recetasnestle.com.co/sites/default/files/styles/crop_article_banner_desktop_nes/public/2021-11/Recetas_1_Historia-de-la-sopa-de-mondongo-Colombiana_1200x500_3.jpg?itok=uyfg2L4A",
+      "content": "La historia de la sopa de mondongo\nEl mondongo es una sopa que no solo se prepara en Colombia, sino en muchos países de América, y en cada región varía su receta de acuerdo con los ingredientes y gustos locales.\n\nLa palabra mondongo viene de las expresiones “mondejo” y “bandujo” que se usan como sinónimo de tripa o vientre de animales, gracias a la influencia de las lenguas bantúes provenientes de África.\n\nSe cree que la tradicional sopa de mondongo es el resultado de la mezcla culinaria entre Europa y América, con el ingrediente principal que le da su nombre: los callos de los estómagos de la res.\n\nEn Europa, dos países tienen platos muy representativos con callo o mondongo, específicamente en España con el más popular, que es el llamado “Olla podrida” con guiso, legumbre y hueso de cerdo, junto a los aclamados “Callos a la madrileña” con chorizo. Y en Italia se llama “Tripa”, en donde el mondongo se corta en julianas y se ponen a asar a la plancha con cebolla y ajos.",
+      "id": "e31d54ee-2e6f-43a0-8835-fed7482500ed"
+    },
+    {
+      "title": "Empanadas",
+      "image-url": "https://assets.elgourmet.com/wp-content/uploads/2023/03/cover_fpa6sn8vqc_empanadas-1024x683.jpg.webp",
+      "content": "Colocar en un bowl la harina junto con grasa derretida o aceite, las yemas de huevo, la sal y el azúcar, mezclar y agregar el agua hasta.\nLograr una consistencia homogénea.\nReservar a temperatura ambiente 30 a 40 minutos.\nCocinar el pollo en agua con sal y hierbas durante 20 minutos, desmenuzar y reservar.\nCocinar en una olla o sartén con un chorrito de aceite la cebolla, junto con el pollo, las especias, salpimentar y agregar de 2 a 3 cucharones de caldo de pollo y por ultimo las aceitunas picadas y el huevo duro rallado.\nHacer bolitas, con la masa ya descansada, de 5 a 10 gramos y con un palote estirar hasta lograr un disco de empanada, rellenar y cocinar en horno de barro.\n",
+      "id": "80c702c8-bdf0-4bc7-a7ce-5e7deee94c02"
+    },
+    {
+      "title": "Locro",
+      "image-url": "https://www.lanacion.com.ar/resizer/v2/locr-FYF74VQQ5FF2HBH53E2DCOQU74.jpg?auth=a405149af1a14d4302200ab7bc2419adecef9f2d4f2ba367e7fb01fc5dda9e4c&width=880&height=586&quality=70&smart=true",
+      "content": "Para el 12 de octubre, día de la Diversidad cultural y para todas las fechas patrias, los platos típicos de nuestro floclore nos llaman a celebrar. El locro, también en esta época del año, resulta una buena opción. Hay muchísimas formas de hacer el locro, una comida típicamente argentina, originaria del norte del país. A los argentinos nos gusta comer el locro en todos los festejos patrios y cuando los días están mas fríos. El locro es, totalmente, una comida invernal. Si lo querés comer en verano, claro que podés, pero es un plato tan pero tan suculento, calórico, nutritivo, sabros, de rechupete... - y, sí, nos encanta el locro- que comerlo en un día frío te reconforta tanto que hasta lo sentís todavía más rico. Es un guiso completo, complejo y complicado, pero vale todo el esfuerzo y la concentración que le pongas al prepararlo. Tus comensales te van a amar para siempre, y la merecida siesta que vas a dormir después de un riquísimo plato de locro, va a ser la mejor de tu vida. Si tenés una olla de barro, aprovechala, no la dejes ahí decorando las estanterías. Usala para hacer un locro bien norteño, con todo lo necesario: carne, panceta, chorizo colorado, panceta, maíz blanco, mucho zapallo que le da ese color naranja pura energía, y con mucha cebollita colorada para la salsa aceitosa que le da su toque final. Servilo en unas cazuelas de barro o de cerámica, hacete el ritual bien patrio porque si vas a comer locro que sea como la tradición manda. Sentí el llamado de la pacha mama y honrala con un exquisito locro bien criollo con esta receta infalible.",
+      "id": "9138e770-a0c2-44f1-be52-8248282cab16"
+    }
+  ]
+}
