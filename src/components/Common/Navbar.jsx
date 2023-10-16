@@ -1,6 +1,35 @@
 import { Link, NavLink } from 'react-router-dom';
 
+import Swal from 'sweetalert2';
+import { toast } from 'sonner';
+
+import { useSession } from '../../stores/useSession';
+
 const Navbar = () => {
+  const { user, isLoggedIn, logout } = useSession();
+
+  const isAdmin = isLoggedIn && user?.isAdmin;
+
+  // HANDLERS --------------------------------------------------
+
+  const handleLogout = () => {
+    Swal.fire({
+      title: '¿Estás seguro?',
+      text: '¿Quieres cerrar sesión?',
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonText: 'Si, cerrar',
+      cancelButtonText: 'No',
+    }).then((result) => {
+      if (result.isConfirmed) {
+        logout();
+        toast.success('Hasta luego!');
+      }
+    });
+  };
+
+  // RENDER ----------------------------------------------------
+
   return (
     <header>
       <nav className='navbar navbar-expand-lg bg-body-tertiary fixed-top'>
@@ -31,16 +60,34 @@ const Navbar = () => {
                   Inicio
                 </NavLink>
               </li>
-              <li className='nav-item'>
-                <NavLink
-                  className={`nav-link ${({ isActive }) =>
-                    isActive ? 'active' : ''}`}
-                  to='/login'
-                >
-                  Login
-                </NavLink>
-              </li>
+              {!isLoggedIn && (
+                <li className='nav-item'>
+                  <NavLink
+                    className={`nav-link ${({ isActive }) =>
+                      isActive ? 'active' : ''}`}
+                    to='/login'
+                  >
+                    Login
+                  </NavLink>
+                </li>
+              )}
+              {isLoggedIn && isAdmin && (
+                <li className='nav-item'>
+                  <NavLink
+                    className={`nav-link ${({ isActive }) =>
+                      isActive ? 'active' : ''}`}
+                    to='/admin'
+                  >
+                    Admin
+                  </NavLink>
+                </li>
+              )}
             </ul>
+            {isLoggedIn && (
+              <button className='btn btn-danger' onClick={handleLogout}>
+                Cerrar sesión
+              </button>
+            )}
           </div>
         </div>
       </nav>

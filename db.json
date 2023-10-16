@@ -18,5 +18,23 @@
       "content": "Para el 12 de octubre, día de la Diversidad cultural y para todas las fechas patrias, los platos típicos de nuestro floclore nos llaman a celebrar. El locro, también en esta época del año, resulta una buena opción. Hay muchísimas formas de hacer el locro, una comida típicamente argentina, originaria del norte del país. A los argentinos nos gusta comer el locro en todos los festejos patrios y cuando los días están mas fríos. El locro es, totalmente, una comida invernal. Si lo querés comer en verano, claro que podés, pero es un plato tan pero tan suculento, calórico, nutritivo, sabros, de rechupete... - y, sí, nos encanta el locro- que comerlo en un día frío te reconforta tanto que hasta lo sentís todavía más rico. Es un guiso completo, complejo y complicado, pero vale todo el esfuerzo y la concentración que le pongas al prepararlo. Tus comensales te van a amar para siempre, y la merecida siesta que vas a dormir después de un riquísimo plato de locro, va a ser la mejor de tu vida. Si tenés una olla de barro, aprovechala, no la dejes ahí decorando las estanterías. Usala para hacer un locro bien norteño, con todo lo necesario: carne, panceta, chorizo colorado, panceta, maíz blanco, mucho zapallo que le da ese color naranja pura energía, y con mucha cebollita colorada para la salsa aceitosa que le da su toque final. Servilo en unas cazuelas de barro o de cerámica, hacete el ritual bien patrio porque si vas a comer locro que sea como la tradición manda. Sentí el llamado de la pacha mama y honrala con un exquisito locro bien criollo con esta receta infalible.",
       "id": "9138e770-a0c2-44f1-be52-8248282cab16"
     }
+  ],
+  "users": [
+    {
+      "username": "ezeamin",
+      "password": "1234Abcd",
+      "lastname": "Amin",
+      "firstname": "Eze",
+      "isAdmin": true,
+      "id": 1
+    },
+    {
+      "firstname": "Pepe",
+      "lastname": "Argento",
+      "username": "pepito",
+      "password": "1234Abcd",
+      "isAdmin": false,
+      "id": 2
+    }
   ]
 }
