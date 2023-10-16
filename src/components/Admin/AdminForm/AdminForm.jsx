@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 
 import { useMutation, useQueryClient } from '@tanstack/react-query';
@@ -15,12 +14,11 @@ import Input from '../../Input/Input';
 import Textarea from '../../Textarea/Textarea';
 
 const AdminForm = () => {
-  // ZUSTAND HOOKS ---------------------------------------------
-
-  const { blog: blogToEdit, clearBlog } = useEditBlog();
-  const isEditing = !!blogToEdit;
-
   // FORM HOOKS ------------------------------------------------
+
+  // Normalmente ordenaría primero a los hooks de Zustand, pero en este caso
+  // hacemos uso de la funcion "setValue" de RHF, y necesitamos que esa funcion
+  // esté declarada antes de usarla
 
   const {
     register,
@@ -29,6 +27,20 @@ const AdminForm = () => {
     setValue,
     reset,
   } = useForm();
+
+  // ZUSTAND HOOKS ---------------------------------------------
+
+  const { blog: blogToEdit, clearBlog } = useEditBlog();
+  const isEditing = !!blogToEdit;
+
+  if (blogToEdit) {
+    // "setValue" no es un setter de estado tradicional, es una función que nos da RHF
+    // por lo tanto, no va a causar un re-render, y no es necesario un useEffect
+
+    setValue('title', blogToEdit.title);
+    setValue('image-url', blogToEdit['image-url']);
+    setValue('content', blogToEdit.content);
+  }
 
   // TQUERY HOOKS ----------------------------------------------
 
@@ -40,7 +52,7 @@ const AdminForm = () => {
     mutationFn: postBlogFn,
     onSuccess: () => {
       // Mensajes de exito
-      Swal.close()	
+      Swal.close();
       toast.success('Blog guardado correctamente');
 
       // Limpiar el formulario
@@ -50,7 +62,7 @@ const AdminForm = () => {
       queryClient.invalidateQueries('blogs');
     },
     onError: () => {
-      Swal.close()	
+      Swal.close();
       toast.error('Ocurrió un error guardando el blog');
     },
   });
@@ -60,7 +72,7 @@ const AdminForm = () => {
     mutationFn: putBlogFn,
     onSuccess: () => {
       // Mensajes de exito
-      Swal.close()	
+      Swal.close();
       toast.success('Blog guardado correctamente');
 
       // Limpiar el formulario
@@ -73,7 +85,7 @@ const AdminForm = () => {
       queryClient.invalidateQueries('blogs');
     },
     onError: () => {
-      Swal.close()	
+      Swal.close();
       toast.error('Ocurrió un error guardando el blog');
     },
   });
@@ -95,18 +107,26 @@ const AdminForm = () => {
     postBlog(newBlog);
   };
 
-  useEffect(() => {
-    if (blogToEdit) {
-      setValue('title', blogToEdit.title);
-      setValue('image-url', blogToEdit['image-url']);
-      setValue('content', blogToEdit.content);
-    }
-  }, [blogToEdit, setValue]);
+  const handleCancelEdit = () => {
+    clearBlog();
+    reset();
+  };
 
   // RENDER ----------------------------------------------------
 
   return (
     <form className='card p-3' onSubmit={onSubmitRHF(handleSubmit)}>
+      {isEditing && (
+        <div className='alert alert-info'>
+          <p className='mb-0'>
+            Atencion. Estás editando el blog titulado{' '}
+            <strong>
+              &quot;{blogToEdit?.title}
+              &quot;
+            </strong>
+          </p>
+        </div>
+      )}
       <Input
         register={register}
         options={{
@@ -146,10 +166,19 @@ const AdminForm = () => {
         placeholder='Hola'
         error={!!errors.content}
       />
-      <div className='text-end'>
-        <button type='submit' className='btn btn-danger mt-3'>
+      <div className='text-end mt-3'>
+        <button type='submit' className='btn btn-danger'>
           Guardar
         </button>
+        {isEditing && (
+          <button
+            type='button'
+            className='btn btn-secondary ms-2'
+            onClick={handleCancelEdit}
+          >
+            Cancelar edición
+          </button>
+        )}
       </div>
     </form>
   );

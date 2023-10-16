@@ -41,7 +41,7 @@ const TableRow = (props) => {
 
   const handleDelete = () => {
     Swal.fire({
-      title: '¿Estás seguro de eliminar este blog?',
+      title: `¿Estás seguro de eliminar el blog "${blog.title}"?`,
       text: 'Esta acción no se puede revertir',
       icon: 'warning',
       showCancelButton: true,
