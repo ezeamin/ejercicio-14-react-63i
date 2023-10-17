@@ -6,15 +6,15 @@ import AdminForm from '../components/Admin/AdminForm/AdminForm';
 import AdminTable from '../components/Admin/AdminTable/AdminTable';
 
 const AdminView = () => {
-  const { data, isError, isLoading } = useQuery(['blogs'], getBlogsFn);
-  console.log(data,isError,isLoading)
+  const { data: blogs, isError, isLoading } = useQuery(['blogs'], getBlogsFn);
+  console.log(blogs);
 
   return (
     <>
       <h1>Panel de administración</h1>
       <hr />
-      <AdminForm  />
-      <AdminTable  />
+      <AdminForm />
+      <AdminTable blogs={blogs} />
     </>
   );
 };
