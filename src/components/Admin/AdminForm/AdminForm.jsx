@@ -1,14 +1,16 @@
 import { useForm } from 'react-hook-form';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
 
+import Swal from 'sweetalert2';
 import { toast } from 'sonner';
+
+import { postBlogFn } from '../../../api/blogs';
 
 import Input from '../../Input/Input';
 import Textarea from '../../Textarea/Textarea';
 
-import { generateId } from '../../../helpers/helpers';
-
-const AdminForm = (props) => {
-  const { setBlogs } = props;
+const AdminForm = () => {
+  // RHF -----------------------------------------------------
 
   const {
     register,
@@ -17,14 +19,37 @@ const AdminForm = (props) => {
     reset,
   } = useForm();
 
+  // TQUERY --------------------------------------------------
+
+  const queryClient = useQueryClient();
+
+  const { mutate: postBlog } = useMutation({
+    mutationFn: postBlogFn,
+    onSuccess: () => {
+      // Mensaje de exito
+      Swal.close();
+      toast.success('Blog guardado correctamente');
+
+      // Resetear el formulario
+      reset();
+
+      // Indicar que la tabla se tiene que recargar
+      queryClient.invalidateQueries('blogs');
+    },
+    onError: () => {
+      Swal.close();
+      toast.error('Ocurrió un error al guardar el blog');
+    },
+  });
+
+  // HANDLERS ------------------------------------------------
+
   const handleSubmit = (data) => {
-    const newBlog = { ...data, id: generateId() };
-    setBlogs((prev) => [...prev, newBlog]);
-
-    toast.success('Blog guardado correctamente');
-
-    reset();
+    Swal.showLoading();
+    postBlog(data);
   };
+
+  // RENDER --------------------------------------------------
 
   return (
     <form className='card p-3' onSubmit={onSubmitRHF(handleSubmit)}>

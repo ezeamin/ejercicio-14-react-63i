@@ -11,14 +11,32 @@ const AdminView = () => {
     isError,
     isLoading,
   } = useQuery({ queryKey: ['blogs'], queryFn: getBlogsFn });
-  console.log(blogs);
 
+  // Caso de error
+  if (isError) {
+    return (
+      <>
+        <h1>Panel de administración</h1>
+        <hr />
+        <AdminForm />
+        <div className='alert alert-danger mt-3'>
+          Ocurrió un error cargando los blogs
+        </div>
+      </>
+    );
+  }
+
+  // Return optimista (todo ok)
   return (
     <>
       <h1>Panel de administración</h1>
       <hr />
       <AdminForm />
-      <AdminTable blogs={blogs} />
+      {isLoading ? (
+        <h3 className='mt-3 text-center'>Cargando...</h3>
+      ) : (
+        <AdminTable blogs={blogs} />
+      )}
     </>
   );
 };
