@@ -1,10 +1,18 @@
 import { useMutation, useQueryClient } from '@tanstack/react-query';
+
 import Swal from 'sweetalert2';
-import { deleteBlogFn } from '../../../api/blogs';
 import { toast } from 'sonner';
+
+import { deleteBlogFn } from '../../../api/blogs';
+
+import { useBlog } from '../../../stores/useBlog';
 
 const TableRow = (props) => {
   const { blog, index } = props;
+  
+  // ZUSTAND -------------------------------------------------
+
+  const { setBlogToEdit } = useBlog();
 
   // TQUERY --------------------------------------------------
 
@@ -25,6 +33,10 @@ const TableRow = (props) => {
   });
 
   // HANDLERS -------------------------------------------------
+
+  const handleEdit = () => {
+    setBlogToEdit(blog);
+  };
 
   const handleDelete = () => {
     Swal.fire({
@@ -55,7 +67,7 @@ const TableRow = (props) => {
         />
       </td>
       <td>
-        <button type='button' className='btn btn-warning'>
+        <button type='button' className='btn btn-warning' onClick={handleEdit}>
           Editar
         </button>
         <button
