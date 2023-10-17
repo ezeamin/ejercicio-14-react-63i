@@ -30,7 +30,7 @@ const DetailView = () => {
   return (
     <>
       <div className='d-flex justify-content-between'>
-        <h1 className='mb-0'>{data.title}</h1>
+        <h1 className='mb-0'>{data?.title || "Error"}</h1>
         <Link to='/' className='btn btn-dark d-flex align-items-center'>
           {'← Volver'}
         </Link>
