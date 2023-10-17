@@ -6,7 +6,11 @@ import AdminForm from '../components/Admin/AdminForm/AdminForm';
 import AdminTable from '../components/Admin/AdminTable/AdminTable';
 
 const AdminView = () => {
-  const { data: blogs, isError, isLoading } = useQuery(['blogs'], getBlogsFn);
+  const {
+    data: blogs,
+    isError,
+    isLoading,
+  } = useQuery({ queryKey: ['blogs'], queryFn: getBlogsFn });
   console.log(blogs);
 
   return (
