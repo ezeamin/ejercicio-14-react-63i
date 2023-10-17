@@ -6,6 +6,12 @@ export const fetchBlogsFn = async () => {
   return data;
 };
 
+export const fetchBlogByIdFn = async (blogId) => {
+  const response = await fetch(`${API_URL}/blogs/${blogId}`);
+  const data = await response.json();
+  return data;
+}
+
 export const postBlogFn = async (blog) => {
   const response = await fetch(`${API_URL}/blogs`, {
     method: 'POST',

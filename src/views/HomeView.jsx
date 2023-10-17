@@ -1,6 +1,6 @@
+import BlogList from '../components/Home/BlogList';
+
 const HomeView = () => {
-  return (
-    <div>HomeView</div>
-  )
-}
-export default HomeView
+  return <BlogList />;
+};
+export default HomeView;
