@@ -21,7 +21,17 @@ export const postBlogFn = async (data) => {
     },
   });
 
-  if(!res.ok){
-    throw new Error('Ocurrió un error al traer los blogs');
+  if (!res.ok) {
+    throw new Error('Ocurrió un error al guardar el blog');
+  }
+};
+
+export const deleteBlogFn = async (blogId) => {
+  const res = await fetch(`${API_URL}/blogs/${blogId}`, {
+    method: 'DELETE',
+  });
+
+  if (!res.ok) {
+    throw new Error('Ocurrió un error al eliminar el blog');
   }
 };
