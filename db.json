@@ -25,7 +25,7 @@
       "lastname": "Amin",
       "username": "ezeamin",
       "password": "aA1*bbbb",
-      "isAdmin": false,
+      "isAdmin": true,
       "id": 1
     },
     {
