@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,500&display=swap');
+
+* {
+  font-family: 'DM Sans', Arial;
+}
+
+body {
+  background-color: #8d8d8d;
+}
+
+#root {
+  display: flex !important;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  margin-top: 60px;
+  margin-bottom: 25px;
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+}

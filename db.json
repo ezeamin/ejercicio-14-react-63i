@@ -1,0 +1,40 @@
+{
+  "blogs": [
+    {
+      "title": "Empanadas de mondongo",
+      "image-url": "https://www.lanacion.com.ar/resizer/v2/empanadas-ZEMLUTI4JVFPZIMJM4V3UYB2B4.jpg?auth=0c3bb9643da3f4d5653af6d36a0cbe6095da18ec28d2c6f904f9a4feac7e880b&width=880&height=586&quality=70&smart=true",
+      "content": "La masa: unir todos los ingredientes para formar una masa. Darle forma de cilindro, dividirlo en rodajas de 1 cm de espesor. Amasar cada rodaja de masa para que quede bien unida y tierna. Tapar y dejar descansar.\nEl relleno: hervir 3 litros de agua con las verduritas para el caldo y la cucharada de sal gruesa. Agregar el matambre desgrasado y dejar cocinar hasta que esté muy tierno (por lo menos 1 1/2 hora). Escurrirlo, colar el caldo y ponerlo en la heladera.",
+      "id": 1
+    },
+    {
+      "title": "Milanesa de hígado con puré de papas",
+      "image-url": "https://www.recetasnestle.com.py/sites/default/files/styles/recipe_detail_desktop/public/srh_recipes/1e13737ba00568d3938668193541fbad.webp?itok=k2lzVf0Z",
+      "content": "1.  Colocar en un bol los huevos, ajo y perejil, leche, mostaza, miel ,sal y pimienta.\n\n2.  Mezclar hasta integrar. Disponer las supremas en el batido y dejar que tomen sabor , cubiertas con film en la heladera durante 1 hora.\n\n3.  Retirar y rebozar con Rebozador MAGGI. Llevar nuevamente al frio para fijar el apanado rebozado.\n\n4.  Acompañar con Pure de Papas MAGGI®\n\n5.  TIP: Incorporar avena y semillas en nuestra alimentación diaria, otorga grandes beneficios para la salud. ¿Qué te parece acompañar estas milanesas con unos ricos vegetales? Combiná crudos y cocidos!",
+      "id": 2
+    },
+    {
+      "title": "Papas con queso de cabra y Salsa Casera",
+      "image-url": "https://www.paulinacocina.net/wp-content/uploads/2022/05/papas-cheddar-800x535.jpg",
+      "content": "Vamos a aprender a hacer queso cheddar vegano y no solo eso, al final les dejamos una receta de salsa de queso cheddar casera y rica en serio, no me van a poner cualquier salsa cheddar que no tiene comparación con ésto que vamos a ver hoy.\n\nDespués de hoy ya no van a ver las papas con cheddar de la misma forma. En fin, vamos con la guia de ésta receta y todo lo que necesitan para que queden espectaculares.",
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "firstname": "Ezequiel",
+      "lastname": "Amin",
+      "username": "ezeamin",
+      "password": "aA1*bbbb",
+      "isAdmin": true,
+      "id": 1
+    },
+    {
+      "firstname": "Cristian",
+      "lastname": "Azubel",
+      "username": "cristi",
+      "password": "aA1*bbbb",
+      "isAdmin": false,
+      "id": 2
+    }
+  ]
+}
