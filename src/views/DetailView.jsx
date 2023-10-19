@@ -9,9 +9,10 @@ const DetailView = () => {
   // Este hook nos permite acceder a los parámetros de la URL (en este caso, el id definido en Router.jsx)
   const { id } = useParams();
 
-  const { data, isLoading, isError } = useQuery(['blog-by-id'], () =>
-    fetchBlogByIdFn(id)
-  );
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['blog-by-id'],
+    queryFn: () => fetchBlogByIdFn(id),
+  });
 
   if (isLoading) {
     return (
@@ -30,7 +31,7 @@ const DetailView = () => {
   return (
     <>
       <div className='d-flex justify-content-between'>
-        <h1 className='mb-0'>{data?.title || "Error"}</h1>
+        <h1 className='mb-0'>{data?.title || 'Error'}</h1>
         <Link to='/' className='btn btn-dark d-flex align-items-center'>
           {'← Volver'}
         </Link>

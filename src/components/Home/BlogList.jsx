@@ -7,7 +7,10 @@ import BlogCard from './BlogCard';
 import './style.css';
 
 const BlogList = () => {
-  const { data, isLoading, isError } = useQuery(['blogs'], fetchBlogsFn);
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['blogs'],
+    queryFn: fetchBlogsFn,
+  });
 
   if (isLoading) {
     return <h3 className='mt-4 text-center'>Cargando...</h3>;

@@ -7,7 +7,10 @@ import AdminTable from '../components/Admin/AdminTable/AdminTable';
 
 const AdminView = () => {
   // Este nombre ('blogs') va a ser de utilidad más adelante
-  const { data, isLoading, isError } = useQuery(['blogs'], fetchBlogsFn);
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ['blogs'],
+    queryFn: fetchBlogsFn,
+  });
 
   return (
     <>
