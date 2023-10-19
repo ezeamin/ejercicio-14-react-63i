@@ -19,5 +19,22 @@
       "id": 3
     }
   ],
-  "users": []
+  "users": [
+    {
+      "firstname": "Ezequiel",
+      "lastname": "Amin",
+      "username": "ezeamin",
+      "password": "aA1*bbbb",
+      "isAdmin": false,
+      "id": 1
+    },
+    {
+      "firstname": "Cristian",
+      "lastname": "Azubel",
+      "username": "cristi",
+      "password": "aA1*bbbb",
+      "isAdmin": false,
+      "id": 2
+    }
+  ]
 }
