@@ -3,7 +3,7 @@ import TableRow from './TableRow';
 import "./style.css"
 
 const AdminTable = (props) => {
-  const { blogs, setBlogs } = props;
+  const { blogs } = props;
 
   return (
     <section className='table-responsive mt-3 rounded'>
