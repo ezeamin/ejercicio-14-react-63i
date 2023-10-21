@@ -12,6 +12,18 @@ export const getBlogsFn = async () => {
   return data;
 };
 
+export const getBlogByIdFn = async (id) => {
+  const res = await fetch(`${API_URL}/blogs/${id}`);
+
+  if (!res.ok) {
+    throw new Error('Ocurrió un error al traer los blogs');
+  }
+
+  const data = await res.json();
+
+  return data;
+};
+
 export const postBlogFn = async (data) => {
   const res = await fetch(`${API_URL}/blogs`, {
     method: 'POST',

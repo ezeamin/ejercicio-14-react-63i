@@ -21,7 +21,7 @@ const Router = () => {
       <main className='container py-5'>
         <Routes>
           <Route path='/' element={<HomeView />} />
-          <Route path='/detalle' element={<DetailView />} />
+          <Route path='/detail/:id' element={<DetailView />} />
           <Route
             path='/login'
             element={isLoggedIn ? <Navigate to='/' /> : <LoginView />}

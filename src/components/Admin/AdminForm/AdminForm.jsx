@@ -94,55 +94,80 @@ const AdminForm = () => {
     }
   };
 
+  const handleCancelEdition = () => {
+    // Resetear el formulario
+    reset();
+
+    // Limpiar estado global
+    clearBlog();
+  };
+
   // RENDER --------------------------------------------------
 
   return (
-    <form className='card p-3' onSubmit={onSubmitRHF(handleSubmit)}>
-      <Input
-        register={register}
-        options={{
-          required: true,
-          minLength: 4,
-          maxLength: 60,
-        }}
-        label='Titulo'
-        name='title'
-        placeholder='Mondongo al plato, uma delicia'
-        error={!!errors.title}
-      />
-      <Input
-        register={register}
-        options={{
-          required: true,
-          minLength: 4,
-          pattern: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|webp|jpeg)/i,
-        }}
-        className='mt-2'
-        type='url'
-        label='Enlace a imagen'
-        name='image-url'
-        placeholder='https://google.com'
-        error={!!errors['image-url']}
-      />
-      <Textarea
-        register={register}
-        options={{
-          required: true,
-          minLength: 5,
-          maxLength: 3000,
-        }}
-        className='mt-2'
-        label='Contenido del blog'
-        name='content'
-        placeholder='Hola'
-        error={!!errors.content}
-      />
-      <div className='text-end'>
-        <button type='submit' className='btn btn-danger mt-3'>
-          Guardar
-        </button>
-      </div>
-    </form>
+    <>
+      {isEditing && (
+        <div className='alert alert-info'>
+          Estás editando el blog de nombre &quot;
+          <span className='fw-bold'>{blog.title}</span>&quot;
+        </div>
+      )}
+      <form className='card p-3' onSubmit={onSubmitRHF(handleSubmit)}>
+        <Input
+          register={register}
+          options={{
+            required: true,
+            minLength: 4,
+            maxLength: 60,
+          }}
+          label='Titulo'
+          name='title'
+          placeholder='Mondongo al plato, uma delicia'
+          error={!!errors.title}
+        />
+        <Input
+          register={register}
+          options={{
+            required: true,
+            minLength: 4,
+            pattern: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png|webp|jpeg)/i,
+          }}
+          className='mt-2'
+          type='url'
+          label='Enlace a imagen'
+          name='image-url'
+          placeholder='https://google.com'
+          error={!!errors['image-url']}
+        />
+        <Textarea
+          register={register}
+          options={{
+            required: true,
+            minLength: 5,
+            maxLength: 3000,
+          }}
+          className='mt-2'
+          label='Contenido del blog'
+          name='content'
+          placeholder='Hola'
+          error={!!errors.content}
+        />
+        <div className='text-end mt-3'>
+          <button type='submit' className='btn btn-danger'>
+            Guardar
+          </button>
+          {isEditing && (
+            <button
+              type='button'
+              className='ms-2 btn btn-secondary'
+              onClick={handleCancelEdition}
+            >
+              Cancelar edición
+            </button>
+          )}
+        </div>
+      </form>
+    </>
   );
 };
 export default AdminForm;
