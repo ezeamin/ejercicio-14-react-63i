@@ -1,0 +1,10 @@
+.content-image {
+  width: 300px;
+}
+
+@media (width < 768px) {
+  .content-image {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
