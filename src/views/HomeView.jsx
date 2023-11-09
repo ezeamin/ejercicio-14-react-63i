@@ -27,9 +27,15 @@ const HomeView = () => {
   }
 
   if (blogs) {
+    if (blogs.data.length === 0) {
+      return (
+        <div className='mt-3 alert alert-warning'>No hay blogs creados aún!</div>
+      );
+    }
+
     return (
       <section className='row mt-3'>
-        {blogs.map((blog) => (
+        {blogs.data.map((blog) => (
           <BlogItem key={blog.id} blog={blog} />
         ))}
       </section>

@@ -25,39 +25,56 @@ export const getBlogByIdFn = async (id) => {
 };
 
 export const postBlogFn = async (data) => {
+  const token = sessionStorage.getItem('token');
+
   const res = await fetch(`${API_URL}/blogs`, {
     method: 'POST',
     body: JSON.stringify(data),
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
     },
   });
 
+  const resData = await res.json();
+
   if (!res.ok) {
-    throw new Error('Ocurrió un error al guardar el blog');
+    throw new Error(resData.message || 'Ocurrió un error al guardar el blog');
   }
 };
 
 export const putBlogFn = async (data) => {
+  const token = sessionStorage.getItem('token');
+
   const res = await fetch(`${API_URL}/blogs/${data.id}`, {
     method: 'PUT',
-    body: JSON.stringify(data),
+    body: JSON.stringify({ ...data, id: undefined }),
     headers: {
       'Content-Type': 'application/json',
+      Authorization: `Bearer ${token}`,
     },
   });
 
+  const resData = await res.json();
+
   if (!res.ok) {
-    throw new Error('Ocurrió un error al guardar el blog');
+    throw new Error(resData.message || 'Ocurrió un error al guardar el blog');
   }
 };
 
 export const deleteBlogFn = async (blogId) => {
+  const token = sessionStorage.getItem('token');
+
   const res = await fetch(`${API_URL}/blogs/${blogId}`, {
     method: 'DELETE',
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
   });
 
+  const resData = await res.json();
+
   if (!res.ok) {
-    throw new Error('Ocurrió un error al eliminar el blog');
+    throw new Error(resData.message || 'Ocurrió un error al eliminar el blog');
   }
 };

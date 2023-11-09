@@ -53,9 +53,9 @@ const AdminForm = () => {
       // Indicar que la tabla se tiene que recargar
       queryClient.invalidateQueries('blogs');
     },
-    onError: () => {
+    onError: (e) => {
       Swal.close();
-      toast.error('Ocurrió un error al guardar el blog');
+      toast.error(e.message);
     },
   });
 
@@ -76,9 +76,9 @@ const AdminForm = () => {
       // Indicar que la tabla se tiene que recargar
       queryClient.invalidateQueries('blogs');
     },
-    onError: () => {
+    onError: (e) => {
       Swal.close();
-      toast.error('Ocurrió un error al guardar el blog');
+      toast.error(e);
     },
   });
 
@@ -88,7 +88,7 @@ const AdminForm = () => {
     Swal.showLoading();
 
     if (isEditing) {
-      putBlog({ ...data, id: blog.id });
+      putBlog({...data, id: blog.id});
     } else {
       postBlog(data);
     }

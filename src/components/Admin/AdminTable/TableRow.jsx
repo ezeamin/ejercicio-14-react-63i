@@ -26,9 +26,9 @@ const TableRow = (props) => {
 
       queryClient.invalidateQueries('blogs');
     },
-    onError: () => {
+    onError: (e) => {
       Swal.close();
-      toast.error('Ocurrió un error eliminando el blog');
+      toast.error(e.message);
     },
   });
 

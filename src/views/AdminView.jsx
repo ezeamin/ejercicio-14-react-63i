@@ -35,7 +35,7 @@ const AdminView = () => {
       {isLoading ? (
         <h3 className='mt-3 text-center'>Cargando...</h3>
       ) : (
-        <AdminTable blogs={blogs} />
+        <AdminTable blogs={blogs.data} />
       )}
     </>
   );

@@ -22,6 +22,7 @@ const Navbar = () => {
       if (res.isConfirmed) {
         toast.success('Sesión cerrada exitosamente. Hasta luego!');
         logout();
+        sessionStorage.removeItem('token');
         navigate('/');
       }
     });
