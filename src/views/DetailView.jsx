@@ -2,6 +2,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Link, useParams } from 'react-router-dom';
 
 import { getBlogByIdFn } from '../api/blogs';
+
 import BlogDetail from '../components/Detail/BlogDetail';
 
 const DetailView = () => {
@@ -42,11 +43,11 @@ const DetailView = () => {
     return (
       <>
         <div className='d-flex justify-content-between align-items-center'>
-          <h1 className='mb-0'>{blog.title}</h1>
+          <h1 className='mb-0'>{blog.data.title}</h1>
           <Link to='/' className='btn btn-dark'>Volver a home</Link>
         </div>
         <hr />
-        <BlogDetail blog={blog} />
+        <BlogDetail blog={blog.data} />
       </>
     );
   }
